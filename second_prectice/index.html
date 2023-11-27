@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEAIR_SELON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #banner{
+            background: linear-gradient(rgba(0,0,0,0.5),#009688),url(img4.png);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        .logo{
+            width: 140px;
+            position: absolute;
+            top: 4%;
+            left: 10%;
+        }
+        .banner-text{
+            text-align: center;
+            color: #fff;
+            padding-top: 180px;
+        }
+        .banner-text h1{
+            font-size: 130px;
+            font-family: 'kaushan script',cursive;
+        }
+        .banner-text p{
+            font-size: 20px;
+            font-style:italic ;
+        }
+        .banner-btn{
+            margin: 70px auto 0;
+        }
+        .banner-btn a{
+            width: 150px;
+            text-decoration: none;
+            display: inline-block;
+            margin:0 10px;
+            padding: 15px 0;
+            color: #fff;
+            border: .5px solid #fff;
+            position: relative;
+            z-index: 1;
+            transition: color 0.5s;
+        }
+        .banner-btn a span{
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        .banner-btn a:hover span{
+            width: 100%;
+            background: #009688;
+        } 
+        .banner-btn a:hover{
+            width:#000;
+        } 
+        #sidenav{
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            right: -250px;
+            top: 0;
+            background: #009688;
+            z-index: 2;
+            transition: 0.5s;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 50px 20px;
+        
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        #menubtn{
+            width: 50px;
+            height: 50px;
+            background: #009688;
+            text-align: center;
+            position: fixed;
+            right: 30px;
+            top: 20px;
+            border-radius: 3px;
+            z-index: 3;
+            cursor: pointer;
+        }
+        #menubtn img{
+            width: 20px;
+            margin-top: 15px;
+
+        }
+        @media screen and (max-width:770px){
+            .banner-text h1{
+                font-size:44px;
+                /* font-family:'kaushan script',cursive; */
+            }
+            .banner-btn a{
+                display: block;
+            }
+        }
+        /* feature */
+        #feature{
+            width: 100%;
+            padding: 70px 0;
+        }
+        .title-text{
+            text-align: center;
+            padding-bottom: 70px;
+        }
+        .title-text p{
+            margin: auto;
+            font-size: 20px;
+            color: #009688;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+
+        }
+        .title-text p::after{
+            content: '';
+            width: 50px;
+            height: 35px;
+            background: linear-gradient(#019587,#fff);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            z-index:-1 ;
+            transform: rotate(10deg);
+            border-top-left-radius:35px ;
+            border-bottom-right-radius: 35px;
+        }
+        .title-text h1{
+            font-size: 50px;
+        }
+        .feature-box{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+        }
+        .features{
+            flex-basis: 50%;
+        }
+        .features-img{
+            flex-basis: 50%;
+            margin: auto;
+            
+        }
+        .features-img img{
+            width: 70%;
+            border-radius: 10px ;
+            /* border: #009688; */
+            /* background: linear-gradient(rgba(0,0,0,0.5),#009688),url(img7.png); */
+        }
+        .features h1{
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: 100;
+            color: #009688;
+        }
+        .features-desc{
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .feature-icon .fa{
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            border-radius: 7px;
+            color: #009688;
+            border: 1px solid #009688;
+        }
+        .feature-text p{
+            padding: 0 20px;
+            text-align: initial;
+        }
+        @media screen and (max-width:770px){
+            .title-text h1{
+                font-size:35px ;
+            }
+            .features{
+                flex-basis: 100%;
+            }
+            .features-img{
+                flex-basis: 100%;
+            }
+            .features-img img{
+                width: 100%;
+            }
+        }
+        #service{
+            width: 100%;
+            padding: 70px 0;
+            background: #efefef;
+        }
+        .service-box{
+            width: 80%;
+            /* height: 400px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: auto;
+        }
+        .single-service{
+            flex-basis: 48%;
+            text-align: center;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+        }
+        .single-service img{
+            width: 100%;
+            border-radius: 7px;    
+        }
+        .overlay{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            border-radius: 7px;
+            cursor: pointer;
+            background: linear-gradient(rgba(0,0,0,0.5),#009688);
+            opacity: 0;
+            transition: is;
+        }
+        .single-service:hover .overlay{
+            opacity: 1;
+        }
+        .img4{
+            height: auto;
+            width: auto;
+        }
+        .service-desc{
+            width: 80%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            opacity: 0;
+            transform: translateX(-50%);
+            transition: is;
+        }
+        hr{
+            background: #fff;
+            height: 2px;
+            border:0 ;
+            margin: 15px auto;
+            width: 60%;
+        }
+        .service-desc p{
+            font-size: 14px;
+        }
+        .single-service:hover .service-desc {
+            bottom: 40%;
+            opacity: 1;
+        }
+        @media screen and (max-width:770px){
+            .single-service{
+                flex-basis: 100%;
+                margin-bottom: 30px;
+            }
+            .service-desc p{
+                font-size:12px ;
+            }
+            hr{
+                margin: 5px auto;
+            }
+            .single-service:hover .service-desc {
+                bottom: 25% !important;
+            }
+        }
+
+        /*---testinonial---*/
+        .testimonial{
+            width: 100%;
+            padding: 70px 0;
+        }
+        .testimonial-row{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .testimonial-col{
+            flex: 28%;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px 3px #00968814;
+            cursor: pointer;
+            display: flex;
+            transition: transform .5s;
+        }
+        .testimonial-col p{
+            font-size: 14px;
+            flex: 28%;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px 3px #00968814;
+            cursor: pointer;
+            display: flex;
+        }
+        .user{
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .user img{
+            width: 40px;
+            margin-right: 20px;
+            border-radius: 3px;
+            /* align-items: center; */
+        }
+        .user-info .fa{
+            margin-left: 10px;
+            color: #27c0ff;
+            font-size:20px ;
+        }
+        .user-info small{
+            color:#009688;
+        }
+        .testimonial-col:hover{
+            transform: translateY(-7px);
+        }
+        @media screen and (max-width:770px){
+            .testimonial-col{
+                flex-basis: 100%;
+            }
+        }
+        #footer{
+            padding: 100px 0 20px;
+            background: #efefef;
+            position: relative;
+        }
+        .footer-row{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-left,.footer-right{
+            flex-basis: 45%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .footer-right{
+            text-align: right;
+        }
+        .footer-row h1{
+            margin: 10px 0;
+        }
+        .footer-row p{
+            line-height: 35px;
+        }
+        .footer-left .fa,.footer-right .fa{
+            font-size: 20px;
+            color: #009688;
+            margin: 10px;
+        }
+        .footer-img{
+            max-width: 370px;
+            opacity: 0.1;
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50% );
+        }
+        .social-links{
+            text-align: center;
+
+        }
+
+        .social-links .fa{
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            border: 1px solid #009688;
+            margin: 40px 5px 0;
+            color: #009688;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .social-links .fa:hover{
+            background: #009688;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+        .social-links p{
+            font-size: 12px;
+            margin-top: 20px;
+
+        }
+        @media screen and (max-width:770px){
+            .footer-left,.footer-right{
+                flex-basis: 100%;
+                font-size: 14px;
+            }
+            .footer-img{
+                top: 25%;
+
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <section id="banner">
+        <!-- <img src="img.jpg" class="logo"> -->
+        <div class="banner-text">
+            <h1>Hair studio</h1>
+            <p>Style Youre Hair Is Style Life</p>
+            <div class="banner-btn">
+                <a href="#"><span></span>Find Out</a>
+                <a href="#"><span></span>Read More</a>
+            </div>
+        </div>
+
+    </section>
+    <div id="sidenav">
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">FEATURES</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">TESTIMONIALS</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">MEET US</a></li>
+                <li><a href="footer">MEET US</a></li>
+            </ul>
+        </nav>
+    
+    </div>
+    <div id="menubtn">
+        <img src="img3.png" id="menu">
+    </div>
+    <!-- FEATURES -->
+    <section id="feature">
+        <div class="title-text">
+            <p>FEATURES</p>
+            <h1>Why Choose Us</h1>
+        </div>
+        <div class="feature-box">
+            <div class="features">
+                <h1>Experienced staff</h1>
+                <div class="features-desc">
+                    <div class="feature-icon">
+                        <i class="fa fa-shield" ></i>
+                    </div>
+                    <div class="feature-text">
+                        <p>Donce eget ultricies sapi.sed porttitor,mauris ater lob facilisis, elit sapie eleifend ligula.</p>
+                    </div>
+                </div>
+                <h1>Pre Booking Online</h1>
+                <div class="features-desc">
+                    <div class="feature-icon">
+                        <i class="fa fa-check-square-o" ></i>
+                    </div>
+                    <div class="feature-text">
+                        <p>Donce eget ultricies sapi.sed porttitor,mauris ater lob facilisis, elit sapie eleifend ligula.</p>
+                    </div>
+                </div>
+                <h1>Affordable Cost</h1>
+                <div class="features-desc">
+                    <div class="feature-icon">
+                        <i class="fa fa-inr" ></i>
+                    </div>
+                    <div class="feature-text">
+                        <p>Donce eget ultricies sapi.sed porttitor,mauris ater lob facilisis, elit sapie eleifend ligula.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-img">
+                <img src="img7.jpg">
+            </div>
+        </div>
+    </section>
+    <!-- SERVICES -->
+    <section id="service">
+        <div class="title-text">
+            <p>SERVICES</p>
+            <h1>We Provide Better</h1>
+        </div>
+        <div class="service-box">
+            <div class="single-service">
+                <img src="img-8.jpg" alt="">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>He is best Hair cuter</h3>
+                    <hr>
+                    <p>This is test under description of barber foundation this is test under description of barber foundation.</p>
+                </div>
+            </div>`
+            <div class="single-service">
+                <img src="img4.png"clasa="img4">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>Hair Styling </h3>
+                    <hr>
+                    <p>This is test under description of barber foundation this is test under description of barber foundation.</p>
+                </div>
+            </div>
+            <div class="single-service">
+                <img src="img-5.jpg" alt="">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>Hair cut</h3>
+                    <hr>
+                    <p>This is test under description of barber foundation this is test under description of barber foundation.</p>
+                </div>
+            </div>
+            <div class="single-service">
+                <img src="img-6.jpg" alt="">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>Hair samp</h3>
+                    <hr>
+                    <p>This is test under description of barber foundation this is test under description of barber foundation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial -->
+    <section id="testimonial">
+        <div class="title-text">
+            <p> Testimonial </p>
+            <h1>What Client Says</h1>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="img-2.jpg" alt="">
+                    <div class="user-info">
+                        <h4>Aaru Rajput<i class="fa fa-twitter" ></i></h4>
+                        <!-- <h4>Aaru Rajput<i class="fa fa-instagram" ></i></h4> -->
+                        <small>@AaruRajput</small>
+                    </div>
+                </div>
+                <p>Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi </p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="https://e0.pxfuel.com/wallpapers/559/368/desktop-wallpaper-funky-boys-handsome-haircut-for-boys.jpg" alt="">
+                    <div class="user-info">
+                        <h4>Rickey Danial<i class="fa fa-twitter" ></i></h4>
+                        <small>@Ricky Danial</small>
+                    </div>
+                </div>
+                <p>Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi </p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <div class="user-info">
+                        <h4>Kamlesh Mehra<i class="fa fa-twitter" ></i></h4>
+                        <small>@Kamlesh_mehra</small>
+                    </div>
+                </div>
+                <p>Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi .sed porttitor , mauris ater lob facilisis , elit sapie eleifend ligula.Donec eget ultriciese sapi </p>
+            </div>
+        </div>
+
+    </section>
+    <!-- footer  -->
+    <section id="footer">
+        <img src="https://spng.pngfind.com/pngs/s/8-86798_beard-png-transparent-background-beard-man-png-png.png" class="footer-img">
+        <div class="title-text">
+            <p>CONTACT</p>
+            <h1>Visit Shop Today</h1>
+        </div>
+        <div class="footer-row">
+        <div class="footer-left">
+            <h1>Opening Hours</h1>
+            <p><i class="fa fa-clock-o" ></i>Monday to Friday - 9am to 9pm</p>
+            <p><i class="fa fa-clock-o" ></i>Saturday and Sunday - 8am to 11pm</p>
+        </div>
+        <div class="footer-right">
+            <h1>Get In Touch</h1>
+            <p>#30 abc Colony, Pune City IN<i class="fa fa-map-marker" ></i></p>
+            <p>artimehra@website.org<i class="fa fa-paper-plane" ></i></p>
+            <p>+01 123456789<i class="fa fa-phone" ></i></p>
+        </div>  
+        </div>
+        <div class="social-links">
+            <i class="fa fa-facebook" ></i>
+            <i class="fa fa-instagram" ></i>
+            <i class="fa fa-twitter" ></i>
+            <i class="fa fa-youtube-play" ></i>
+            <p>It is an establishment where a hairdresser or beautician conducts trade. You can also call it a parlour or a boutique you can visit heare</p>
+        </div>
+
+    </section>
+    <script>
+        let menubtn = document.getElementById("menubtn")
+        let sidenav = document.getElementById("sidenav")
+        let menu = document.getElementById("menu")
+
+        sidenav.style.right ="-250px";
+
+        menubtn.onclick = function(){
+            if(sidenav.style.right =="-250px"){
+                sidenav.style.right = "0";
+                menu.src="close.png";
+            }
+            else{
+                sidenav.style.right = "-250px";
+                menu.src="img3.png";
+            }
+        }
+        var scroll = new SmoothScroll('a[href*="#"]', {
+	        speed: 500,
+	        speedAsDuration: true
+        });
+    </script>
+    
+</body>
+</html>

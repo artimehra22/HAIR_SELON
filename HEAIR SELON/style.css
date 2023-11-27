@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=anton&family=ubuntu:wght@300;400;500;700&display=swap'); 
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+*{
+    font-family: 'anton',sans-serif;
+    font: 'ubuntu',sans-serif;
+    color: #01497c;
+}
+.nav{
+    position: sticky;
+    top: 0;right:0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 50px;
+    background:#fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+}
+.navlist{
+    display: flex;
+}
+.navlist li a{
+    font-size: 17px;
+    margin: 0 25px;
+    position: relative;
+}
+
+.logo {
+    width:300px;
+
+}
